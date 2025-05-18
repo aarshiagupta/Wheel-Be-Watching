@@ -3,24 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bike Watching</title>
+    <!-- <header><h1>🚴🏼‍♀️Bike Watching</h1></header> -->
+    <header>
+        <h1>🚴‍♀️ Bike Watching</h1>
+        <div id="slider-container">
+          <label for="time-slider">Filter by time:</label>
+          <input id="time-slider" type="range" min="-1" max="1440" value="-1" />
+          <div class="time-wrapper">
+            <time id="selected-time">11:59 PM</time>
+            <em id="any-time">(any time)</em>
+          </div>
+        </div>
+      </header>
+      
+      
+      
+      
 
     <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="map.css" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
     <!-- Mapbox GL JS CSS -->
     <link
     href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
     rel="stylesheet"
     />
-
     <script src="map.js" type="module"></script>
   </head>
 
   <body>
-    <h1>🚴🏼‍♀️Bike Watching</h1>
+    <!-- <h1>🚴🏼‍♀️Bike Watching</h1> -->
 
-    <div id="map"></div> 
+    <div id="map">
+        <svg></svg>
+    </div> 
     
   </body>
 </html>

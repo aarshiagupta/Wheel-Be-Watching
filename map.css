@@ -1,89 +1,4 @@
-/* html,
 body {
-  margin: 0;
-  padding: 5;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-}
- */
-
-/* #map {
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  border-radius: 8px;
-}
-
-#map svg {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-svg circle {
-    fill: steelblue;
-    fill-opacity: 0.6;
-    stroke: white;
-    stroke-width: 1;
-    pointer-events: auto;
-} */
-
-/* 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0 2rem;
-    margin-bottom: 1rem;
-    max-width: 1000px;
-    margin-inline: auto;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 600;
-  }
-  
-  #slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  #slider-container label {
-    margin-bottom: 0.4rem;
-  }
-  
-  #time-slider {
-    width: 200px;
-  }
-  
-  .time-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 0.2rem;
-  }
-  
-  #selected-time {
-    font-weight: normal;
-    font-size: 0.95rem;
-  }
-  
-  #any-time {
-    font-style: italic;
-    font-size: 0.85rem;
-    color: #555;
-  }
-   */ */
-
-   body {
     font: 100%/1.5 system-ui, sans-serif;
     display: flex;
     flex-flow: column;
@@ -158,4 +73,38 @@ header em {
   }
 
   
+  #legend {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
+    font-size: 0.9em;
+    margin: 0 auto;
+    border-top: 1px solid #ccc; padding-top: 0.5em;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .dot.departures {
+    background-color: steelblue;
+  }
+  
+  .dot.balanced {
+    background-color: mediumorchid; /* pick a mix color you use */
+  }
+  
+  .dot.arrivals {
+    background-color: darkorange;
+  }
   

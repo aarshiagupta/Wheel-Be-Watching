@@ -48,14 +48,6 @@ function computeStationTraffic(stations, trips) {
         return station;
       });
     } 
-    // Update each station..
-    // return stations.map((station) => {
-    //   let id = station.short_name;
-    //   station.arrivals = arrivals.get(id) ?? 0;
-      // what you updated in step 4.2
-//       return station;
-//     });
-//   }
 
 function minutesSinceMidnight(date) {
     return date.getHours() * 60 + date.getMinutes();
@@ -111,7 +103,6 @@ map.on('load', async () => {
       let stations = [];
       let trips = [];
       // Initialize stations array
-    //   let jsonData;
     try {
         const jsonurl = 'https://dsc106.com/labs/lab07/data/bluebikes-stations.json';
         const tripURL = 'https://dsc106.com/labs/lab07/data/bluebikes-traffic-2024-03.csv';
@@ -123,19 +114,7 @@ map.on('load', async () => {
         return trip;
         });
 
-        stations = computeStationTraffic(jsonData.data.stations, trips); // ✅ trips is defined now
-
-        // const jsonData = await d3.json(jsonurl);
-        // // stations = jsonData.data.stations;
-        // const stations = computeStationTraffic(jsonData.data.stations, trips);
-
-        // let trips = await d3.csv('https://dsc106.com/labs/lab07/data/bluebikes-traffic-2024-03.csv', 
-        //     (trip) => {
-        //     trip.started_at = new Date(trip.started_at);
-        //     trip.ended_at = new Date(trip.ended_at);
-        //     return trip;
-        // }
-        // );
+        stations = computeStationTraffic(jsonData.data.stations, trips); 
 
         const departures = d3.rollup(
             trips,
@@ -163,16 +142,14 @@ map.on('load', async () => {
 
         let stationFlow = d3.scaleQuantize().domain([0, 1]).range([0, 0.5, 1]);
 
-        // const svg = d3.select('#map').select('svg');
         const svg = d3.select('#map')
-  .append('svg')
-  .attr('width', '100%')
-  .attr('height', '100%')
-  .style('position', 'absolute')
-  .style('top', 0)
-  .style('left', 0)
-  .style('pointer-events', 'none'); // Let mouse pass through
-
+        .append('svg')
+        .attr('width', '100%')
+        .attr('height', '100%')
+        .style('position', 'absolute')
+        .style('top', 0)
+        .style('left', 0)
+        .style('pointer-events', 'none'); // Let mouse pass through
 
         const circles = svg
         .selectAll('circle')
@@ -180,7 +157,7 @@ map.on('load', async () => {
         .enter()
         .append('circle')
         .attr('r', d => radiusScale(d.totalTraffic))
-        // .attr('fill', 'steelblue')
+        .attr('fill', 'steelblue')
         .attr('stroke', 'white')
         .attr('stroke-width', 1)
         .attr('opacity', 0.8)
@@ -223,7 +200,6 @@ map.on('load', async () => {
               anyTimeLabel.style.display = 'none'; // Hide "(any time)"
             }
           
-            // Call updateScatterPlot to reflect the changes on the map
             updateScatterPlot(timeFilter);
           }
 
